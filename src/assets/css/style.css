@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;600;700&display=swap");
 
 body {
     text-align: center;
     margin: 0;
     padding: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
 }
@@ -53,7 +54,6 @@ body {
     }
 }
 
-
 #brand {
     display: block;
     margin: 0;
@@ -70,10 +70,14 @@ body {
     line-height: 85px;
     width: 60%;
     float: right;
+    display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        /* Nueva línea para alinear verticalmente */
 }
 
 #menu ul li {
-    display: inline-block;
+    display: flex;
     list-style: none;
     height: 46px;
     margin-left: 15px;
@@ -90,12 +94,17 @@ body {
     color: rgba(255, 0, 0, 1);
 }
 
+.active:focus {
+    color: rgba(255, 0, 0, 1) !important;
+}
 #slider {
     background: rgb(205, 76, 92);
-    background: radial-gradient(circle, rgba(205, 76, 92, 1) 0%, rgba(255, 0, 0, 1) 62%, rgba(157, 5, 5, 1) 95%);
+    background: radial-gradient(circle,
+                rgba(205, 76, 92, 1) 0%,
+                rgba(255, 0, 0, 1) 62%,
+                rgba(157, 5, 5, 1) 95%);
     width: 100%;
     height: 350px;
-    /*line-height: 320px;*/
     color: white;
     text-shadow: 0px 0px 5px #444;
 }
@@ -137,10 +146,9 @@ body {
 }
 
 #slider.slider-small h1 {
-    margin: 0px;
-    margin-bottom: 40px;
+    margin-top: 0.2px;
     padding: 0px;
-    padding-top: 50px;
+    padding-top: 53px;
 }
 
 #content {
@@ -188,6 +196,7 @@ body {
     transition: 300ms all;
     border: none;
     cursor: pointer;
+    text-align: center;
 }
 
 .btn-success {
@@ -199,23 +208,268 @@ body {
     transition: 300ms all;
 }
 
-input[type="text"] {
+.btn-warning {
+    background: rgb(221, 128, 6);
+    color: white !important;
+    text-decoration: none;
+}
+
+.btn-danger {
+    background: rgb(196, 8, 8);
+    color: white !important;
+    text-decoration: none;
+}
+
+.btn-warning:hover,
+.btn-danger:hover {
+    transition: all 300ms;
+    opacity: 0.8;
+}
+
+.mid-form {
+    width: 50%;
+    margin: 0px auto;
+}
+
+.mid-form label {
+    display: block;
+    float: left;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+input[type="text"],
+input[type="file"],
+textarea {
     width: 100%;
-    height: 30px;
+    min-height: 30px;
     border: 1px solid #ccc;
     padding: 3px;
     margin-bottom: 5px;
+    transition: 300ms all;
+        text-indent: 10px;
+    }
+    
+    input[type="text"]:focus,
+    textarea:focus {
+        box-shadow: 0px 0px 5px #eee inset;
+    }
+    
+    textarea {
+        width: 100%;
+        height: 150px;
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 150px;
+        max-height: 300px;
+    }
+    
+    .radibuttons {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        float: left;
+    }
+    
+    .article-item {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        text-align: left;
+    }
+    
+    .article-item .image-wrap {
+        width: 130px;
+        height: 130px;
+        overflow: hidden;
+        float: left;
+        margin-right: 15px;
+        border: 1px solid #ccc;
+    }
+    
+    .article-item .image-wrap img {
+        height: 150%;
+        text-align: center;
+    }
+    
+    .article-item h2 {
+        display: block;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        margin-bottom: 7px;
+    }
+    
+    .article-item .date {
+        display: block;
+        width: 100%;
+        color: rgb(122, 122, 122);
+    }
+    
+    .article-item a {
+        display: block;
+        color: #444;
+        text-decoration: none;
+        margin-top: 10px;
+    }
+    
+    .article-item a:hover {
+        text-decoration: underline;
+    }
+    
+    .subheader {
+        font-size: 38px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+    
+    .article-detail .image-wrap {
+        float: none;
+        width: 100%;
+        height: 300px;
+    }
+    
+    .article-detail .image-wrap img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .article-detail .subheader {
+        margin-top: 15px;
+        margin-bottom: 0px;
+        border: none;
 }
 
 #footer {
-    background: #f7f7f7;
+    position: fixed;
+        bottom: 0;
+        left: 0;
     width: 100%;
     height: 70px;
+    background: #f7f7f7;
     line-height: 70px;
-    color: #444;
+    color: #444
 }
 
 #footer p {
     margin: 0px;
     padding: 0px;
+}
+/* Media Queries */
+
+@media (max-width: 1488px) {
+
+    /*Se ejecutarán estos estilos*/
+    .center {
+        width: 85%;
+    }
+}
+
+/*Desde la anchura 0px hasta la anchura 963px de pantalla*/
+@media (max-width: 1314px) {
+    .center {
+        width: 95%;
+    }
+
+    #menu ul {
+        width: auto;
+    }
+}
+
+@media (max-width: 881px) {
+    #logo {
+        width: 265px;
+    }
+
+    #menu {
+        width: auto;
+    }
+}
+
+@media (max-width: 813px) {
+    #logo {
+        float: none;
+        /*width: 240px;*/
+        margin: 0px auto;
+        margin-top: 20px;
+    }
+
+    #menu,
+    #menu ul {
+        clear: both;
+        float: none;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        line-height: 43px;
+    }
+
+    #content {
+        float: none;
+        width: 100%;
+    }
+
+    #sidebar {
+        float: none;
+        width: 60%;
+        margin: 0px auto;
+        margin-bottom: 50px;
+    }
+
+    #slider h1 {
+        padding-top: 115px;
+        font-size: 25px;
+    }
+
+    .mid-form {
+        width: 70%;
+    }
+
+    #footer {
+        position: relative;
+    }
+}
+
+@media (max-width: 497px) {
+    #header {
+        min-height: 130px;
+        overflow: hidden;
+    }
+
+    #menu,
+    #menu ul {
+        line-height: 50px;
+    }
+
+    #menu ul li {
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+
+    #slider {
+        height: 180px;
+    }
+
+    #slider h1 {
+        font-size: 19px;
+        padding-top: 30px;
+    }
+
+    #slider .btn-white {
+        margin-top: 20px;
+    }
+
+    #slider.slider-small {
+        height: 100px;
+    }
+
+    #slider.slider-small h1 {
+        padding-top: 35px;
+    }
+
+    #footer {
+        position: relative;
+    }
 }

@@ -1,0 +1,22 @@
+<app-slider [nombre]="'Pagina'"></app-slider>
+
+<div class="cemter">
+    <section id="content">
+
+
+        <h2 class="sub-header">Pagina</h2>
+
+        <div *ngIf='name || apellido; else noHayParametros'>
+            <h3>el nombre es {{name}} {{apellido}}</h3>
+        </div>
+
+        <ng-template #noHayParametros>
+            <h3>No hay parametros para mostrar</h3>
+        </ng-template>
+
+
+        <button (click)="redireccion()">Muestrame los parametros</button>
+
+    </section>
+    <app-sidebar></app-sidebar>
+</div>
